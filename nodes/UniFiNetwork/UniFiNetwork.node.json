@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.unifi-network",
+	"node": "n8n-nodes-base.UniFiNetwork",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Cybersecurity"],
