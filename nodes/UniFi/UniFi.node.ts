@@ -1,10 +1,16 @@
-import { ICredentialDataDecryptedObject, ICredentialsDecrypted, ICredentialTestFunctions, INodeCredentialTestResult, INodeType, INodeTypeDescription } from "n8n-workflow";
+import { ICredentialDataDecryptedObject, ICredentialsDecrypted, ICredentialTestFunctions, IExecuteFunctions, INodeCredentialTestResult, INodeExecutionData, INodeType, INodeTypeDescription, NodeExecutionWithMetadata } from "n8n-workflow";
 import { validateCredentials } from "./transport";
+
+import * as device from './actions/device';
+import * as host from './actions/host';
+import * as site from './actions/site';
+
+import { router } from "./actions/router";
 
 export class UniFi implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'UniFi',
-		name: 'unifi',
+		name: 'uniFi',
 		icon: 'file:unifi.svg',
 		group: ['transform'],
 		version: 1,
@@ -22,15 +28,38 @@ export class UniFi implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: "https://api.ui.com/ea",
+			baseURL: 'https://api.ui.com/ea',
 			headers: {
-				'X-API-KEY': '={{$credentials.apiKey}}',
+				'X-API-KEY': "={{$credentials.apiKey}}",
 				'Content-Type': 'application/json',
 				'Accept': 'application/json',
 			},
 		},
 		properties: [
-
+			{
+				displayName: 'Resource',
+				name: 'resource',
+				type: 'options',
+				noDataExpression: true,
+				options: [
+					{
+						name: 'Device',
+						value: 'device',
+					},
+					{
+						name: 'Host',
+						value: 'host',
+					},
+					{
+						name: 'Site',
+						value: 'site',
+					},
+				],
+				default: 'host',
+			},
+			...device.descriptions,
+			...host.descriptions,
+			...site.description,
 		],
 	};
 
@@ -59,4 +88,8 @@ export class UniFi implements INodeType {
 			}
 		},
 	};
+
+	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][] | NodeExecutionWithMetadata[][] | null> {
+		return await router.call(this);
+	}
 }
