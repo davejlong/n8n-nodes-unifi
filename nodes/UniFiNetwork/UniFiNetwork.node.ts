@@ -14,7 +14,7 @@ export class UniFiNetwork implements INodeType {
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Work with the UniFi Site Manager API',
+		description: 'Work with the UniFi Network API',
 		defaults: {
 			name: 'UniFi',
 		},
