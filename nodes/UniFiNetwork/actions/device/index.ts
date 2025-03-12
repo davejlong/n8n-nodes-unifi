@@ -2,8 +2,9 @@ import { INodeProperties } from 'n8n-workflow';
 
 import * as get from './get';
 import * as getAll from './getAll';
+import * as statistics from './statistics';
 
-export { get, getAll };
+export { get, getAll, statistics };
 
 export const descriptions: INodeProperties[] = [
 	{
@@ -29,9 +30,16 @@ export const descriptions: INodeProperties[] = [
 				description: 'Retrieve many devices',
 				action: 'Get many devices',
 			},
+			{
+				name: 'Get Statistics',
+				value: 'statistics',
+				description: 'Retrieve statistics for a device',
+				action: 'Get device statistics'
+			}
 		],
 		default: 'getAll',
 	},
 	...get.description,
 	...getAll.description,
+	...statistics.description
 ] as INodeProperties[];

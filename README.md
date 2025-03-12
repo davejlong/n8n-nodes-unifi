@@ -28,7 +28,9 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 #### Devices
 
+* Get - Retrieve details for a single device
 * Get All - List adopted devices for a site
+* Get Statistics - Retrieve the lastest statistics for a single device
 
 ### Site Manager API
 

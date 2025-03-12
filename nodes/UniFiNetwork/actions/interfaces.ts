@@ -1,7 +1,7 @@
 import { AllEntities, Entity, PropertiesOf } from "n8n-workflow";
 
 type UniFiMap = {
-	device: 'get' | 'getAll';
+	device: 'get' | 'getAll' | 'statistics';
 	site: 'getAll';
 }
 
