@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-unifi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "n8n node to work with the UniFi Cloud API",
   "keywords": [
     "n8n-community-node-package",
@@ -39,10 +39,12 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/UniFiApi.credentials.js"
+      "dist/credentials/UniFiNetworkApi.credentials.js",
+      "dist/credentials/UniFiSiteManagerApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/UniFi/UniFi.node.js"
+      "dist/nodes/UniFiNetwork/UniFiNetwork.node.js",
+      "dist/nodes/UniFiSiteManager/UniFiSiteManager.node.js"
     ]
   },
   "devDependencies": {
