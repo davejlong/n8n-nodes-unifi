@@ -7,15 +7,15 @@ import * as site from './actions/site';
 
 import { router } from "./actions/router";
 
-export class UniFi implements INodeType {
+export class UniFiSiteManager implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'UniFi',
-		name: 'uniFi',
-		icon: 'file:unifi.svg',
+		displayName: 'UniFi Site Manager',
+		name: 'uniFiSiteManager',
+		icon: 'file:../unifi.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Work with the UniFi API',
+		description: 'Work with the UniFi Site Manager API',
 		defaults: {
 			name: 'UniFi',
 		},
@@ -23,7 +23,7 @@ export class UniFi implements INodeType {
 		outputs: ['main'],
 		credentials: [
 			{
-				name: 'unifiApi',
+				name: 'unifiSiteManagerApi',
 				required: true,
 			},
 		],

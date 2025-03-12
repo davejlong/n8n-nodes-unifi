@@ -1,8 +1,8 @@
 import type { IAuthenticateGeneric, ICredentialTestRequest, ICredentialType, INodeProperties } from 'n8n-workflow';
 
-export class UniFiApi implements ICredentialType {
-	name = 'unifiApi';
-	displayName = 'UniFi API';
+export class UniFiNetworkApi implements ICredentialType {
+	name = 'unifiNetworkApi';
+	displayName = 'UniFi Network API';
 	documentationUrl = 'https://github.com/davejlong/n8n-nodes-unifi';
 
 	properties: INodeProperties[] = [
@@ -13,6 +13,13 @@ export class UniFiApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 		},
+		{
+			displayName: 'Network Controller Address',
+			description: 'Address of the UniFi Controller',
+			name: 'host',
+			type: 'string',
+			default: '',
+		}
 	];
 
 	authenticate: IAuthenticateGeneric = {
@@ -28,8 +35,8 @@ export class UniFiApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://api.ui.com/ea',
-			url: '/hosts',
+			baseURL: "=https://{{$credentials.host}}/proxy/network/integration/v1",
+			url: '/sites',
 			method: 'GET',
 		}
 	};

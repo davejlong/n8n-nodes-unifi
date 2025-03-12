@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-base.unifi-site-manager",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Cybersecurity"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/davejlong/n8n-nodes-unifi"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/davejlong/n8n-nodes-unifi"
+			}
+		]
+	}
+}

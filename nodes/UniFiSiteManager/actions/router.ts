@@ -2,8 +2,8 @@ import { IExecuteFunctions, INodeExecutionData, JsonObject, NodeApiError } from 
 import { UniFi } from './interfaces';
 
 import * as device from './device';
-import * as site from './site';
 import * as host from './host';
+import * as site from './site';
 
 export async function router(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 	const items = this.getInputData();

@@ -10,7 +10,7 @@ export async function apiRequest(
 	body: IDataObject | GenericValue | GenericValue[] = {},
 	query: IDataObject = {},
 ) {
-	const { apiKey } = await this.getCredentials('unifiApi') as { apiKey: string };
+	const { apiKey } = await this.getCredentials('unifiSiteManagerApi') as { apiKey: string };
 	const options: IHttpRequestOptions = {
 		method,
 		body,
@@ -22,8 +22,6 @@ export async function apiRequest(
 			'Accept': 'application/json',
 		},
 	}
-
-	this.logger.info(`Executing request for ${options.url}`);
 
 	try {
 		return await this.helpers.httpRequest(options);

@@ -20,29 +20,38 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-### Devices
+### Network API
 
-#### Get All
+#### Sites
 
-Retrieves UniFi devices managed by a host
+* Get All - List local sites managed by the Network controller
 
-### Hosts
+#### Devices
 
-#### Get All
+* Get All - List adopted devices for a site
 
-Retrieve hosts associated with the UI account
+### Site Manager API
 
-#### Get
+#### Devices
 
-Retrieve detailed information about a specific host
+* Get All - Retrieves UniFi devices managed by a host
 
-### Sites
+#### Hosts
 
-#### Get All
+* Get All - Retrieve hosts associated with the UI account
+* Get - Retrieve detailed information about a specific host
 
-Retrieve sites associated with the UI account.
+#### Sites
+
+* Get All - Retrieve sites associated with the UI account.
 
 ## Credentials
+
+### Network API
+
+API Keys for the Network API can be generated from the UniFi console under the Control Pane section on the Integrations Tab.
+
+### Site Manager API
 
 The UniFi Site Manager API is only available to Early Access Program members. See information about how to sign up for EA and get an API key from the [API Documentation](https://developer.ui.com/site-manager-api/gettingstarted/)
 
