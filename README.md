@@ -2,6 +2,7 @@
 
 This is an n8n community node to work with the Syncro RMM API in your n8n workflows.
 
+- [Warning](#warning)
 - [Installation](#installation)
 - [Operations](#operations)
 - [Credentials](#credentials)
@@ -9,13 +10,41 @@ This is an n8n community node to work with the Syncro RMM API in your n8n workfl
 - [Resources](#resources)
 - [Funding](#funding)
 
+## Warning
+
+The UniFi Site Manager API is part of the Early Access program and is still in active development.
+
 ## Installation
 
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
 ## Operations
 
+### Devices
+
+#### Get All
+
+Retrieves UniFi devices managed by a host
+
+### Hosts
+
+#### Get All
+
+Retrieve hosts associated with the UI account
+
+#### Get
+
+Retrieve detailed information about a specific host
+
+### Sites
+
+#### Get All
+
+Retrieve sites associated with the UI account.
+
 ## Credentials
+
+The UniFi Site Manager API is only available to Early Access Program members. See information about how to sign up for EA and get an API key from the [API Documentation](https://developer.ui.com/site-manager-api/gettingstarted/)
 
 ## Compatibility
 
