@@ -65,6 +65,7 @@ Tested against n8n 1.79.3+
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
 * [UniFi API documentation](https://developer.ui.com/site-manager-api/)
+* [Example Workflow to Sync UniFi Devices with Hudu assets](https://gist.github.com/davejlong/273bd83f49855dda75501b4886bc4a45)
 
 ## Funding
 
